@@ -1,0 +1,34 @@
+{
+  "name": "Chatter box clicker and alarm",
+  "description": "Расширения для сhatter-box Zen, с функцией автоклика и оповещения при получении тикета",
+  "version": "0.5",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "/popup.html",
+    "default_icon": {
+      "16": "/images/get_started16.png",
+      "32": "/images/get_started32.png",
+      "48": "/images/get_started48.png",
+      "128": "/images/get_started128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/get_started16.png",
+    "32": "/images/get_started32.png",
+    "48": "/images/get_started48.png",
+    "128": "/images/get_started128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["/sound/alarm.mp3"],
+      "matches": ["http://127.0.0.1:5500/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://127.0.0.1:5500/*"],
+      "js": ["/content-script.js"]
+    }
+  ]
+}
